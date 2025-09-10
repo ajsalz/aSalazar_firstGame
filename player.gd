@@ -5,57 +5,69 @@ signal hit
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
+var dead = false
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	hide()
 
 
 func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
-
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play() # $ is shorthand for get_node()
-	else:
-		$AnimatedSprite2D.stop()
-
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
-
-	if velocity.x != 0:
-		if velocity.x > 0:
-			$AnimatedSprite2D.animation = "right"
-		else:
-			$AnimatedSprite2D.animation = "left"
+	if dead == false:
 		
-	elif velocity.y != 0:
-		if velocity.y > 0:
-			$AnimatedSprite2D.animation = "down"
+		var velocity = Vector2.ZERO # The player's movement vector.
+		if Input.is_action_pressed("move_right"):
+			velocity.x += 1
+		if Input.is_action_pressed("move_left"):
+			velocity.x -= 1
+		if Input.is_action_pressed("move_down"):
+			velocity.y += 1
+		if Input.is_action_pressed("move_up"):
+			velocity.y -= 1
+
+		if velocity.length() > 0:
+			velocity = velocity.normalized() * speed
+			$AnimatedSprite2D.play() # $ is shorthand for get_node()
 		else:
-			$AnimatedSprite2D.animation = "up"
-		#$AnimatedSprite2D.flip_v = velocity.y > 0
+			$AnimatedSprite2D.stop()
+
+		position += velocity * delta
+		position = position.clamp(Vector2.ZERO, screen_size)
+
+		if velocity.x != 0:
+			if velocity.x > 0:
+				$AnimatedSprite2D.animation = "right"
+			else:
+				$AnimatedSprite2D.animation = "left"
+			
+		elif velocity.y != 0:
+			if velocity.y > 0:
+				$AnimatedSprite2D.animation = "down"
+			else:
+				$AnimatedSprite2D.animation = "up"
+			#$AnimatedSprite2D.flip_v = velocity.y > 0
 
 
 func start(pos):
-	hide()
+	dead = false
 	position = pos
 	show()
 	$AnimatedSprite2D.animation = "new"
 	$CollisionShape2D.disabled = false
 
+#Got help from this beautiful person 
+#https://forum.godotengine.org/t/how-to-add-a-death-animation-for-dodge-the-creeps-tutorial-solved/8689/5
 
 func _on_body_entered(_body):
 	# Must be deferred as we can't change physics properties on a physics callback.
+	var velocity = Vector2()
+	dead = true
+	velocity = Vector2(0,0)
 	$CollisionShape2D.set_deferred("disabled", true)
-	hit.emit()
+	emit_signal("hit")
 	$AnimatedSprite2D.play("death")
-	await $AnimatedSprite2D.animation_finished
+	$DeathTimer.start()
+
+#https://forum.godotengine.org/t/death-in-my-game/56488
+func _on_death_timer_timeout() -> void:
 	hide()

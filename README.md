@@ -57,5 +57,11 @@ https://kidscancode.org/godot_recipes/4.x/ai/chasing/index.html
 WEEK THREE:
 SEPTEMBER 10–16, 2025
 
+September 10
 
+- AYYYY WE DID IT DEATH ANIMATION WORKS!
+Shout out to this forum
+https://forum.godotengine.org/t/how-to-add-a-death-animation-for-dodge-the-creeps-tutorial-solved/8689/5
 
+- Added a death timer so there is a waiting period before the game restarts. 
+    -Character Animation also resets
