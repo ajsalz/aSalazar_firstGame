@@ -1,5 +1,10 @@
 # aSalazar_firstGame
 
+WEEK TWO ASSIGNMENT 
+SEPTEMBER 3–9TH 
+
+DEMO/PROGRESS AS OF DEADLINE: https://drive.google.com/file/d/1Fwew4C9PjpbCy-WYqgUx-j_Xheak4KGm/view?usp=sharing
+
 BASE GAME
 
 Total Time: 4 hours (for reasons explained below)
@@ -47,4 +52,10 @@ Total time: 1 hr???
 
 Other tutorial attempted:
 https://kidscancode.org/godot_recipes/4.x/ai/chasing/index.html
+
+-----------------------------------------------------------------------
+WEEK THREE:
+SEPTEMBER 10–16, 2025
+
+
 
