@@ -1,6 +1,6 @@
 # aSalazar_firstGame
 
-UPDATE #1: BASE GAME
+BASE GAME
 
 Total Time: 4 hours (for reasons explained below)
 
@@ -11,8 +11,6 @@ I accidently deleted my first game when I tried to commit to git for the first t
 
 UPDATE #2: CHANGING THE AESTHETIC
 
-Total Time: 1-1.5 hours
-
 Assets:
 Sprites: Armonykle on Itch.io
 https://armonykle.itch.io/medieval-character-sprites
@@ -21,7 +19,7 @@ LOG:
 
 - Changed the dimensions of the window to be wider and reset HUD positions (~5 minutes)
 
-- Sprite Customization:
+- Sprite Sheets Customization (1 – 1.5 hours):
 
     -Tutorial 1:
     Godot game engine 3.0 Animated Sprite nodes
@@ -35,7 +33,18 @@ LOG:
 
     I customized the Enemies and the Player Sprites. 
 
-    - I took out the code for random rotations, but I will need to change the animations for the enemies. I left it at an okay-ish place tho. 
+    - I took out the code for random rotations for the enemies, but I will need to change the animations for the enemies. I left it at an okay-ish place tho. 
+
+    - Changed it so it doesn't flip based on +/- of y and x and instead each direction has their own animation. 
 
 UPDATE #3: A BETTER DEATH AND CHANGING ANIMATIONS 
+
+Total time: 1 hr??? 
+
+- Changed sound of death
+
+-Attempted to change death animation
+
+Other tutorial attempted:
+https://kidscancode.org/godot_recipes/4.x/ai/chasing/index.html
 
