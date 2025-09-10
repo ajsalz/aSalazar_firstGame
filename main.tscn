@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dii48ks82b8fk" path="res://player.tscn" id="2_jektf"]
 [ext_resource type="PackedScene" uid="uid://bx5mtde2eelb2" path="res://mob.tscn" id="2_yej41"]
 [ext_resource type="PackedScene" uid="uid://djreu7nlemxg1" path="res://hud.tscn" id="4_d5myr"]
-[ext_resource type="AudioStream" uid="uid://bfckixsxfekjl" path="res://art/gameover.wav" id="5_3m2n8"]
+[ext_resource type="AudioStream" uid="uid://cr4rcrbscew22" path="res://art/most-famous-movie-dying-sound-effect.mp3" id="5_lquwl"]
 
 [sub_resource type="Curve2D" id="Curve2D_5v23c"]
 _data = {
@@ -45,7 +45,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(350, 350)
 
 [node name="MobPath" type="Path2D" parent="."]
 position = Vector2(0.981367, 0)
@@ -62,7 +62,7 @@ rotation = 0.00414076
 stream = SubResource("AudioStreamOggVorbis_r1d36")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_3m2n8")
+stream = ExtResource("5_lquwl")
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

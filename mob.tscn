@@ -146,7 +146,6 @@ script = ExtResource("1_mlhje")
 scale = Vector2(3.03, 3.03)
 sprite_frames = SubResource("SpriteFrames_rxhkm")
 animation = &"swipey"
-frame_progress = 0.839462
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12.27, 0)

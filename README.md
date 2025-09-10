@@ -11,7 +11,7 @@ I accidently deleted my first game when I tried to commit to git for the first t
 
 UPDATE #2: CHANGING THE AESTHETIC
 
-Total Time: 
+Total Time: 1-1.5 hours
 
 Assets:
 Sprites: Armonykle on Itch.io
@@ -37,4 +37,5 @@ LOG:
 
     - I took out the code for random rotations, but I will need to change the animations for the enemies. I left it at an okay-ish place tho. 
 
+UPDATE #3: A BETTER DEATH AND CHANGING ANIMATIONS 
 
