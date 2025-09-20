@@ -271,7 +271,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.94, 2.94)
 sprite_frames = SubResource("SpriteFrames_onrkg")
-animation = &"death"
+animation = &"new"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.53, 3.98)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckmwawp3gxtpy"]
+
+[ext_resource type="AudioStream" uid="uid://cctothvcsme6q" path="res://audio/music/hips-dont-lie-bardcore--medieval-style-cover.mp3" id="1_5jhky"]
+
+[node name="AudioManager" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("1_5jhky")
+autoplay = true

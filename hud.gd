@@ -5,7 +5,7 @@ signal start_game
 # Called when the node enters the scene tree for the first time.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta):
 	pass
 
 func show_message(text):
@@ -15,12 +15,12 @@ func show_message(text):
 	
 func show_game_over():
 	show_message("Game Over")
-	# Wait until the MessageTimer has counted down.
+	
 	await $MessageTimer.timeout
 
-	$Message.text = "Dodge the Creeps!"
+	$Message.text = "The Familiar"
 	$Message.show()
-	# Make a one-shot timer and wait for it to finish.
+
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
 	
