@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=4 uid="uid://ce5t6tv2r834l"]
+[gd_scene load_steps=11 format=4 uid="uid://ce5t6tv2r834l"]
 
 [ext_resource type="Script" uid="uid://0gnmkw8om5qu" path="res://main.gd" id="1_08s2j"]
 [ext_resource type="PackedScene" uid="uid://dii48ks82b8fk" path="res://player.tscn" id="2_jektf"]
-[ext_resource type="PackedScene" uid="uid://bx5mtde2eelb2" path="res://mob.tscn" id="2_yej41"]
 [ext_resource type="PackedScene" uid="uid://cy2v371020lj1" path="res://commonEnemy.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://djreu7nlemxg1" path="res://hud.tscn" id="4_d5myr"]
 [ext_resource type="AudioStream" uid="uid://cr4rcrbscew22" path="res://art/most-famous-movie-dying-sound-effect.mp3" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dy6sk4borkxit" path="res://heart_container.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://7ovy7wx4u2g4" path="res://pit.tscn" id="8_5vw27"]
 
 [sub_resource type="Curve2D" id="Curve2D_5v23c"]
 _data = {
@@ -24,7 +25,6 @@ loop = true
 
 [node name="Main" type="Node"]
 script = ExtResource("1_08s2j")
-mob_scene = ExtResource("2_yej41")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -37,13 +37,15 @@ color = Color(0, 0, 0, 1)
 [node name="Player" parent="." instance=ExtResource("2_jektf")]
 collision_mask = 2
 
-[node name="commonEnemies" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("4_7mycd")]
+[node name="commonEnemies" parent="." instance=ExtResource("4_7mycd")]
 position = Vector2(241, 212)
 scale = Vector2(1.75, 1.75)
-endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="commonEnemies"]
 position = Vector2(0, 42.2857)
+
+[node name="pit" parent="." instance=ExtResource("8_5vw27")]
+position = Vector2(494, 513)
 
 [node name="MobTimer" type="Timer" parent="."]
 
@@ -72,6 +74,19 @@ stream = SubResource("AudioStreamOggVorbis_r1d36")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_lquwl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="heartContainer" parent="CanvasLayer" instance=ExtResource("7_272bh")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -129.42
+offset_top = 13.61
+offset_right = -75.42
+offset_bottom = 27.61
+grow_horizontal = 0
+scale = Vector2(2.1, 2.1)
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

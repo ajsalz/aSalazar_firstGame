@@ -1,8 +1,12 @@
 extends Node
 
-@export var mob_scene: PackedScene
-var score
+@export var spawn_object = preload("res://commonEnemy.tscn")
 
+@onready var heartContainer = $CanvasLayer/heartContainer
+@onready var player = $Player
+
+var score
+	
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
@@ -14,6 +18,11 @@ func game_over():
 func new_game():
 	#get_tree().call_group("mobs", "queue_free")
 	score = 0
+	
+	heartContainer.setMaxHearts(player.maxHealth)
+	heartContainer.updateHearts(player.currentHealth)
+	player.healthChanged.connect(heartContainer.updateHearts)
+	
 	$Player.start($StartPosition.position)
 	$commonEnemies.start()
 	$StartTimer.start()
@@ -22,14 +31,7 @@ func new_game():
 	$HUD.show_message("they hunger...")
 	
 	#$Music.play()
-
-func _on_mob_timer_timeout():
-	return
-
-
-func _on_score_timer_timeout():
-	score += 1
-	$HUD.update_score(score)
+	
 
 
 func _on_start_timer_timeout():

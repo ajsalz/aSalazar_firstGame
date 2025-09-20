@@ -20,6 +20,9 @@ Assets:
 Sprites: Armonykle on Itch.io
 https://armonykle.itch.io/medieval-character-sprites
 
+Hearts: VampireGirl on Itch.io
+https://fliflifly.itch.io/hearts-and-health-bar
+
 LOG:
 
 - Changed the dimensions of the window to be wider and reset HUD positions (~5 minutes)
@@ -56,6 +59,8 @@ https://kidscancode.org/godot_recipes/4.x/ai/chasing/index.html
 -----------------------------------------------------------------------
 WEEK THREE:
 
+UPDATE #4: CHANGING ENEMY MOVEMENT AND ANIMATIONS 
+
 September 10:
 
 - AYYYY WE DID IT DEATH ANIMATION WORKS!
@@ -68,5 +73,27 @@ https://forum.godotengine.org/t/how-to-add-a-death-animation-for-dodge-the-creep
 -Bug: the mobs don't disappear anymore :/
 
 September 10 – 17:
+(Total time 3ish hours)
+https://www.youtube.com/watch?v=2oPzZqHR2Rg
+https://www.youtube.com/watch?v=WVQkOWY3zxQ&list=TLPQMTkwOTIwMjUUXWC6LokYQg&index=1
+https://www.youtube.com/watch?v=kNFd6-CfQjo&list=TLPQMTkwOTIwMjUUXWC6LokYQg&index=2
 
-- Changed mob and enemy movement
+- Attempted to change current Mob set up to follow, but I ended up deleting it and restarting the enemy part because I was getting confused
+
+- Started with one enemy. Gave it the ability to idle and follow when the player entered an area. Updated animations. 
+
+UPDATE #5: ADDING A HEALTH BAR
+Tutorial: 
+- https://www.youtube.com/watch?v=7rmtxjAjUPc
+- https://www.youtube.com/watch?v=5UlVxqN3tk8
+
+September 18: Health Bar
+
+(An hour and a half)
+
+-Added a health node and created a heart GUI. I also messed around with getting my enemies to disappear when the game is over. 
+
+UPDATE #6:
+Tutorial: https://www.youtube.com/watch?v=pzhfUbP2-MY&t=56s
+
+Trying to fix my enemies so they spawn again + additing pit of death

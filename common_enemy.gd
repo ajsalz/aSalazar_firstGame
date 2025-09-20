@@ -3,26 +3,44 @@ extends CharacterBody2D
 
 @export var speed = 10
 @export var limit = 0.5
-@export var endPoint: Marker2D
 
+@onready var endPoint = $Marker2D
 @onready var animations = $AnimatedSprite2D
+
+var score = 0
 
 var startPosition
 var endPosition
 var target: Player = null
 
+
 var active = false
 var following = false
 
 func _ready():
+	print("Marker2D:", $Marker2D)
+	print("Children:", get_children())
+
 	hide()
 	active = false
+	score = 0
+	
 	startPosition = position
 	endPosition = endPoint.global_position
 
 func start():
 	show()
 	active = true
+	$AnimatedSprite2D.animation = "walkDown"
+	$CollisionShape2D.disabled = false
+	
+func death():
+	$CollisionShape2D.set_deferred("disabled", true)
+	$AnimatedSprite2D.play("death")
+	
+func game_over():
+	hide()
+	active = false
 	
 func changeDirection():
 	var tempEnd = endPosition

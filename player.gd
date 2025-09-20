@@ -2,6 +2,7 @@ class_name Player
 extends Area2D
 
 signal hit
+signal healthChanged
 
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
@@ -70,7 +71,8 @@ func death():
 func _on_body_entered(_body):
 	# Must be deferred as we can't change physics properties on a physics callback.
 	currentHealth -= 1
-	print_debug(currentHealth)
+	healthChanged.emit(currentHealth)
+	
 	if currentHealth == 0:
 		currentHealth = maxHealth
 		death()
