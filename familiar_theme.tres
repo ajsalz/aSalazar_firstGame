@@ -1,0 +1,34 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cj0vrjpbiq2ux"]
+
+[ext_resource type="FontFile" uid="uid://cexqi232ed67m" path="res://fonts/GothicPixels.ttf" id="1_3rsyn"]
+[ext_resource type="FontFile" uid="uid://bewjp1nid8tl4" path="res://fonts/ModernDOS9x16.ttf" id="1_ktbso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktbso"]
+bg_color = Color(0.399057, 0.007925, 0.0551335, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pf7i"]
+bg_color = Color(0.563495, 1.13107e-06, 0.134321, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdvd5"]
+bg_color = Color(0.787718, 0.376249, 0.551209, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rsyn"]
+bg_color = Color(0.279357, 0.279357, 0.279357, 1)
+
+[resource]
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_ktbso")
+Button/styles/hover = SubResource("StyleBoxFlat_ktbso")
+Button/styles/normal = SubResource("StyleBoxFlat_8pf7i")
+Button/styles/pressed = SubResource("StyleBoxFlat_gdvd5")
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_3rsyn")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_3rsyn")

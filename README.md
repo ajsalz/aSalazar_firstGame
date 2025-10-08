@@ -96,4 +96,85 @@ September 18: Health Bar
 UPDATE #6:
 Tutorial: https://www.youtube.com/watch?v=pzhfUbP2-MY&t=56s
 
-Trying to fix my enemies so they spawn again + additing pit of death
+Trying to fix my enemies so they spawn again + adding pit of death
+
+-----------------------------------------------------------------------------------------
+
+TIME BOX: MENU ASSIGNMENT
+
+1 and 15 minutes for wireframes (I’m kind very visual and would have sketched these out)
+
+Link to figma prototype: 
+
+ Fixed ordering of z-axis for sprites (5 minutes)
+
+**FIxing Collision Bug (1.5 hours)**
+
+https://www.youtube.com/watch?v=ksLKc9oACQA
+
+• Had to add another Area2D to the Enemy to detect contact
+
+• Added a knock function to push player when hurt
+
+• Moved where health takes damage because of the knock
+
+Purpose: gives more affordance to the player allowing them a quick breather so damage isn’t taken all the time. 
+
+For this part, it took me awhile because I used different node types and I had some issues with the signals. 
+
+
+
+**Followed UI Intro Tutorial (1.5 hrs including time spent searching for assets)**
+
+Link: https://www.youtube.com/watch?v=1_OFJLyqlXI&list=PLghtort-tzjwNkAducljA4WhlSuZ_uN5x&index=9
+
+
+**Assets:**
+
+• Wine glass by MTS1944 on itch.io
+
+https://mts1944.itch.io/glass-of-wine
+
+• Typeface: GothicPixels by LingDong Huang 
+
+
+**Actions:**
+
+• Added a panel and grid container to hold an icon and counter
+
+• Created a theme and uploaded a new font for the labels
+
+• Fixed anchors on some of the existing elements
+
+
+
+**How to Create A Simple Main Menu in Godot (45 mins–1hr)**
+
+Tutorial Link: https://www.youtube.com/watch?v=Z8jcjy_jZyk&list=PLhBqFleCVBkXQiE8Nm4Co_1iJJ4L7UIzr
+
+Assets:
+
+• Background is part of the Castle of Last Shadows Project by PIXEL_1992 on itch.io
+
+• Typeface for Buttons: Modern DOS by Jayvee Enaguas 
+
+
+**Actions:**
+
+• Created a new Main Menu
+
+• Added shadows to the title text to increase contrast and make it more readable
+
+• Diverged from video to customize my theme and played around there
+
+• Customized Buttons
+
+
+
+**Cleaned up and deleted old nodes that I was no longer using and fixing up some things that broke (10–15 mins)**
+
+Found and changed to new background music (20 minutes)
+
+Fugue in D Minor by Bishara Haroni
+
+https://artlist.io/royalty-free-music/artist/bishara-haroni/1569

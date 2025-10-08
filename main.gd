@@ -2,13 +2,12 @@ extends Node
 
 @export var spawn_object = preload("res://commonEnemy.tscn")
 
-@onready var heartContainer = $CanvasLayer/heartContainer
+@onready var heartContainer = $Hearts/heartContainer
 @onready var player = $Player
 
 var score
 	
 func game_over():
-	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_over()
 	$Music.stop()
@@ -31,7 +30,6 @@ func new_game():
 	$HUD.show_message("they hunger...")
 	
 	#$Music.play()
-	
 
 
 func _on_start_timer_timeout():

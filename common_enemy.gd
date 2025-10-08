@@ -13,9 +13,11 @@ var startPosition
 var endPosition
 var target: Player = null
 
-
 var active = false
 var following = false
+
+var knock_back: Vector2 = Vector2.ZERO
+var knock_timer: float = 0.0 
 
 func _ready():
 	print("Marker2D:", $Marker2D)
@@ -27,6 +29,7 @@ func _ready():
 	
 	startPosition = position
 	endPosition = endPoint.global_position
+	start()
 
 func start():
 	show()
@@ -90,8 +93,9 @@ func _physics_process(_delta):
 		else:
 			following = false
 			patrol()
-		move_and_slide()
-		updateAnimation()
+						
+	move_and_slide()
+	updateAnimation()
 
 func _on_follow_area_area_entered(area: Area2D) -> void:
 	if area is Player:
@@ -100,3 +104,9 @@ func _on_follow_area_area_entered(area: Area2D) -> void:
 func _on_follow_area_area_exited(area: Area2D) -> void:
 	if area == target:
 		target = null
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is Player:
+		var knock_direction = (area.global_position - global_position).normalized()
+		area.knockback(knock_direction, 200, .12)
+		area.take_damage()
